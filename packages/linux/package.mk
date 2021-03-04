@@ -16,6 +16,12 @@ PKG_STAMP="$KERNEL_TARGET $KERNEL_MAKE_EXTRACMD"
 PKG_PATCH_DIRS="$LINUX"
 
 case "$LINUX" in
+    amlogic)
+    PKG_VERSION="6ee1d745b7c9fd573fba142a2efdad76a9f1cb04" # 5.11-rc5
+    PKG_SHA256="56d3dddbd4d8dcca641683262bfe2dba5049b296abca9f1fc882e156cd206d4e"
+    PKG_URL="https://github.com/torvalds/linux/archive/${PKG_VERSION}.tar.gz"
+    PKG_SOURCE_NAME="linux-${LINUX}-${PKG_VERSION}.tar.gz"
+    ;;
   rockchip-4.4)
     PKG_VERSION="8394b6656aeea884ae576a85c11d6280595445fd"
     PKG_URL="https://github.com/mrfixit2001/rockchip-kernel/archive/$PKG_VERSION.tar.gz"
@@ -50,9 +56,9 @@ case "$LINUX" in
     PKG_PATCH_DIRS="default"
     ;;
   *)
-    PKG_VERSION="5.1.18"
-    PKG_SHA256="6013e7dcf59d7c1b168d8edce3dbd61ce340ff289541f920dbd0958bef98f36a"
-    PKG_URL="https://www.kernel.org/pub/linux/kernel/v5.x/$PKG_NAME-$PKG_VERSION.tar.xz"
+PKG_VERSION="5.10.17"
+    PKG_SHA256="e84e623ce8bb2446ec026b62eafa3b18480aa6fb6ae9c86cd8f18651324d4814"
+    PKG_URL="https://www.kernel.org/pub/linux/kernel/v5.x/${PKG_NAME}-${PKG_VERSION}.tar.xz"
     PKG_PATCH_DIRS="default"
     ;;
 esac
